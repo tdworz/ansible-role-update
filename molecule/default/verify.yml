@@ -1,0 +1,58 @@
+---
+
+- name: Verify RHEL-based systems
+  hosts:
+    - almalinux8
+    - rockylinux8
+    - oraclelinux8
+    - centosstream8
+    - almalinux9
+    - rockylinux9
+    - oraclelinux9
+    - centosstream9
+    - fedora36
+    - fedora37
+    - fedora38
+  gather_facts: false
+  tasks:
+
+    - name: Confirm there are no available updates
+      ansible.builtin.command: dnf check-update
+      become: true
+      register: available_updates
+      failed_when: available_updates.rc == 1
+      changed_when: available_updates.rc == 100
+
+    - name: Assert there are no updates available
+      ansible.builtin.assert:
+        that: available_updates.rc == 0
+        success_msg: There are no updates available.
+        fail_msg: There are updates available.
+
+
+- name: Verify Debian-based systems
+  hosts:
+    - debian10
+    - debian11
+    - debian12
+    - ubuntu2004
+    - ubuntu2204
+  gather_facts: false
+  tasks:
+
+    - name: Update the package cache
+      ansible.builtin.apt:
+        update_cache: yes
+      become: true
+
+    - name: Confirm there are no available updates
+      ansible.builtin.command: apt list --upgradable
+      become: true
+      register: available_updates
+      changed_when: available_updates.stdout != 'Listing...'
+
+    - name: Assert there are no updates available
+      ansible.builtin.assert:
+        that: available_updates.stdout == 'Listing...'
+        success_msg: There are no updates available.
+        fail_msg: There are updates available.
