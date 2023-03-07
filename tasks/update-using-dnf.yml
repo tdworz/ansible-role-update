@@ -7,6 +7,11 @@
     update_cache: true
   become: true
 
+- name: Clean up packages using DNF
+  ansible.builtin.dnf:
+    autoremove: true
+  become: true
+
 - name: Check if a reboot is required for DNF systems
   ansible.builtin.command:
     cmd: dnf needs-restarting -r

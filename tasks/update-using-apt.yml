@@ -7,6 +7,12 @@
     update_cache: true
   become: true
 
+- name: Clean up packages using APT
+  ansible.builtin.apt:
+    autoclean: true
+    autoremove: true
+  become: true
+
 - name: Check if a reboot is required for APT systems
   ansible.builtin.stat:
     path: /var/run/reboot-required
