@@ -6,3 +6,15 @@
     state: latest
     update_cache: true
   become: true
+
+- name: Check if a reboot is required for DNF systems
+  ansible.builtin.command:
+    cmd: dnf needs-restarting -r
+  register: reboot_required
+  changed_when: reboot_required.rc == 1
+  failed_when: (reboot_required.rc != 0) and (reboot_required.rc != 1)
+
+- name: Reboot DNF systems that require a reboot
+  ansible.builtin.reboot:
+  become: true
+  when: reboot_required.rc == 1
