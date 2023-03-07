@@ -14,12 +14,10 @@ galaxy_info:
       versions:
         - 36
         - 37
-        - 38
     - name: Debian
       versions:
         - buster
         - bullseye
-        - bookworm
     - name: Ubuntu
       versions:
         - focal

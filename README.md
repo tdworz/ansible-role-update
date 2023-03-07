@@ -14,8 +14,8 @@ period ends, this role will no longer support the distribution.
 |---------------|----------------|---------------------|
 | AlmaLinux     | 10 years       | 8, 9                |
 | CentOS Stream | 10 years       | 8, 9                |
-| Debian        | 5 years        | 10, 11, 12          |
-| Fedora        | 1 year         | 36, 37, 38          |
+| Debian        | 5 years        | 10, 11              |
+| Fedora        | 1 year         | 36, 37              |
 | Oracle Linux  | 10 years       | 8, 9                |
 | Rocky Linux   | 10 years       | 8, 9                |
 | Ubuntu        | 5 years        | 20.04, 22.04        |

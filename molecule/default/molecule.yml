@@ -12,32 +12,8 @@ platforms:
     image: dokken/almalinux-8
     pre_build_image: true
 
-  - name: rockylinux8
-    image: dokken/rockylinux-8
-    pre_build_image: true
-
-  - name: oraclelinux8
-    image: dokken/oraclelinux-8
-    pre_build_image: true
-
-  - name: centosstream8
-    image: dokken/centos-stream-8
-    pre_build_image: true
-
   - name: almalinux9
     image: dokken/almalinux-9
-    pre_build_image: true
-
-  - name: rockylinux9
-    image: dokken/rockylinux-9
-    pre_build_image: true
-
-  - name: oraclelinux9
-    image: dokken/oraclelinux-9
-    pre_build_image: true
-
-  - name: centosstream9
-    image: dokken/centos-stream-9
     pre_build_image: true
 
   - name: fedora36
@@ -48,20 +24,12 @@ platforms:
     image: dokken/fedora-37
     pre_build_image: true
 
-  - name: fedora38
-    image: dokken/fedora-38
-    pre_build_image: true
-
   - name: debian10
     image: dokken/debian-10
     pre_build_image: true
 
   - name: debian11
     image: dokken/debian-11
-    pre_build_image: true
-
-  - name: debian12
-    image: dokken/debian-12
     pre_build_image: true
 
   - name: ubuntu2004

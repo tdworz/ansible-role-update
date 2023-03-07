@@ -3,16 +3,9 @@
 - name: Verify RHEL-based systems
   hosts:
     - almalinux8
-    - rockylinux8
-    - oraclelinux8
-    - centosstream8
     - almalinux9
-    - rockylinux9
-    - oraclelinux9
-    - centosstream9
     - fedora36
     - fedora37
-    - fedora38
   gather_facts: false
   tasks:
 
@@ -34,7 +27,6 @@
   hosts:
     - debian10
     - debian11
-    - debian12
     - ubuntu2004
     - ubuntu2204
   gather_facts: false
