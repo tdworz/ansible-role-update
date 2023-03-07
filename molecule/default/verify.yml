@@ -6,7 +6,6 @@
     - almalinux9
     - fedora36
     - fedora37
-  gather_facts: false
   tasks:
 
     - name: Confirm there are no available updates
@@ -29,7 +28,6 @@
     - debian11
     - ubuntu2004
     - ubuntu2204
-  gather_facts: false
   tasks:
 
     - name: Update the package cache

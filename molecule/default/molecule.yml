@@ -4,41 +4,49 @@ dependency:
   name: galaxy
 
 driver:
-  name: docker
+  name: vagrant
 
 platforms:
 
   - name: almalinux8
-    image: dokken/almalinux-8
-    pre_build_image: true
+    box: bento/almalinux-8
+    memory: 2048
+    cpus: 2
 
   - name: almalinux9
-    image: dokken/almalinux-9
-    pre_build_image: true
+    box: bento/almalinux-9
+    memory: 2048
+    cpus: 2
 
   - name: fedora36
-    image: dokken/fedora-36
-    pre_build_image: true
+    box: bento/fedora-36
+    memory: 2048
+    cpus: 2
 
   - name: fedora37
-    image: dokken/fedora-37
-    pre_build_image: true
+    box: bento/fedora-37
+    memory: 2048
+    cpus: 2
 
   - name: debian10
-    image: dokken/debian-10
-    pre_build_image: true
+    box: bento/debian-10
+    memory: 2048
+    cpus: 2
 
   - name: debian11
-    image: dokken/debian-11
-    pre_build_image: true
+    box: bento/debian-11
+    memory: 2048
+    cpus: 2
 
   - name: ubuntu2004
-    image: dokken/ubuntu-20.04
-    pre_build_image: true
+    box: bento/ubuntu-20.04
+    memory: 2048
+    cpus: 2
 
   - name: ubuntu2204
-    image: dokken/ubuntu-22.04
-    pre_build_image: true
+    box: bento/ubuntu-22.04
+    memory: 2048
+    cpus: 2
 
 provisioner:
   name: ansible
