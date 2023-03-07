@@ -1,6 +1,6 @@
 ---
 
-- name: Update all packages to their latest versions
+- name: Update all packages using DNF
   ansible.builtin.dnf:
     name: "*"
     state: latest

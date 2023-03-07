@@ -1,18 +1,18 @@
 ---
 
-- name: Update the system
+- name: Update all packages using APT
   ansible.builtin.apt:
     name: "*"
     state: latest
     update_cache: true
   become: true
 
-- name: Check if a reboot is required
+- name: Check if a reboot is required for APT systems
   ansible.builtin.stat:
     path: /var/run/reboot-required
   register: reboot_required_file
 
-- name: Reboot the system if required
+- name: Reboot APT systems that require a reboot
   ansible.builtin.reboot:
   become: true
   when: reboot_required_file.stat.exists

@@ -1,7 +1,7 @@
 Ansible Role: Update
 ====================
 
-An Ansible role to update system packages.
+An Ansible role to update system packages and to reboot the system if required.
 
 Supported Linux Distributions
 -----------------------------

@@ -1,9 +1,9 @@
 ---
 
-- name: If on a Red Hat-based system, upgrade using dnf
+- name: Update systems that use DNF
   import_tasks: update-using-dnf.yml
   when: ansible_facts['os_family'] == 'RedHat'
 
-- name: If on a Debian-based system, upgrade using apt
+- name: Update systems that use APT
   import_tasks: update-using-apt.yml
   when: ansible_facts['os_family'] == 'Debian'
