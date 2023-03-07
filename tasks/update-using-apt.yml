@@ -1,25 +1,25 @@
 ---
 
-- name: Install packages required for ansible.builtin.apt
+- name: Install packages required for ansible.builtin.apt on APT systems
   ansible.builtin.apt:
     name: python3-apt
     update_cache: true
   become: true
 
-- name: Update all packages using APT
+- name: Update all packages on APT systems
   ansible.builtin.apt:
     name: "*"
     state: latest
     update_cache: true
   become: true
 
-- name: Clean up packages using APT
+- name: Clean up packages on APT systems
   ansible.builtin.apt:
     autoclean: true
     autoremove: true
   become: true
 
-- name: Check if a reboot is required for APT systems
+- name: Check if a reboot is required on APT systems
   ansible.builtin.stat:
     path: /var/run/reboot-required
   register: reboot_required_file

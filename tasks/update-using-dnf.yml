@@ -1,24 +1,24 @@
 ---
 
-- name: Install packages required for ansible.builtin.dnf
+- name: Install packages required for ansible.builtin.dnf on DNF systems
   ansible.builtin.dnf:
     name: python3-dnf
     update_cache: true
   become: true
 
-- name: Update all packages using DNF
+- name: Update all packages on DNF systems
   ansible.builtin.dnf:
     name: "*"
     state: latest
     update_cache: true
   become: true
 
-- name: Clean up packages using DNF
+- name: Clean up packages on DNF systems
   ansible.builtin.dnf:
     autoremove: true
   become: true
 
-- name: Check if a reboot is required for DNF systems
+- name: Check if a reboot is required on DNF systems
   ansible.builtin.command:
     cmd: dnf needs-restarting -r
   register: reboot_required
