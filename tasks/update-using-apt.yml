@@ -1,5 +1,11 @@
 ---
 
+- name: Install packages required for ansible.builtin.apt
+  ansible.builtin.apt:
+    name: python3-apt
+    update_cache: true
+  become: true
+
 - name: Update all packages using APT
   ansible.builtin.apt:
     name: "*"

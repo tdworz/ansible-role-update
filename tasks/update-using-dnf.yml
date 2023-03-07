@@ -1,5 +1,11 @@
 ---
 
+- name: Install packages required for ansible.builtin.dnf
+  ansible.builtin.dnf:
+    name: python3-dnf
+    update_cache: true
+  become: true
+
 - name: Update all packages using DNF
   ansible.builtin.dnf:
     name: "*"
